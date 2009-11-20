@@ -26,11 +26,10 @@ sub _lazy_suggestions {
     my $self = shift;
     WWW::UserVoice::API::Forum::Suggestions->new( api => $self->api, forum => $self )
 }
-around 'url' => sub {
-    my $orig = shift;
+sub url {
     my $self = shift;
     
-    my $url = $self->$orig(@_);
+    my $url = $self->base_url(@_);
     
     return $url . "forums/" . $self->id . "/";
 }

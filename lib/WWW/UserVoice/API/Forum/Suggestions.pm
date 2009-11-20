@@ -9,7 +9,7 @@ has 'forum' => (is => 'ro', isa => 'WWW::UserVoice::API::Forum', required => 1);
 sub list {
     my ($self) = @_;
     # We need to fetch this JSON biatch
-    my $url = $self->url
+    my $json = $self->get($self->url);
 }
 
 sub search {
@@ -23,7 +23,7 @@ sub show {
 }
 
 
-override url => sub {
+sub url {
     my $self = shift;
     my $method = shift || '';
     return $self->forum->url . "suggestions" . ( $method ? "/$method" : '');
