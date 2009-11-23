@@ -1,0 +1,12 @@
+h1. WWW::UserVoice::API
+
+This is a (for now) rather crude and simple implementation of the uservoice-api.
+It only supports getting suggestions for a forum, and returns those as a array 
+of hash.
+
+
+h2. TODO
+
+* Implement more of the API
+* Better remote testing (For now depends on my employers account)
+* The API might need to return something better than hash'es
